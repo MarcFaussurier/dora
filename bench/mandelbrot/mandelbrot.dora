@@ -2,97 +2,97 @@ fun main() {
     Mandelbrot(argv(0).parseInt()).compute();
 }
 
-const BUFFER_SIZE: Int = 8192;
+const BUFFER_SIZE: Int := 8192;
 
 class Mandelbrot(let size: Int) {
-    let fac: Double = 2.0 / size.toDouble();
+    let fac: Double := 2.0 / size.toDouble();
     var shift: Int;
-    let buf: Array<Byte> = Array::<Byte>(BUFFER_SIZE);
+    let buf: Array<Byte> := Array::<Byte>(BUFFER_SIZE);
     var bufLen: Int;
 
     init(size: Int): self(size) {
-        if size % 8 == 0 {
-            shift = 0;
+        if size % 8 =0 {
+            shift := 0;
         } else {
-            shift = (8 - size % 8);
+            shift := (8 - size % 8);
         }
     }
-    
+
     fun compute() {
-        var y = 0;
+        var y := 0;
 
         println("P4");
-        let s = size.toString();
+        let s := size.toString();
         println(s + " " + s);
 
         while y < self.size {
             self.computeRow(y);
-            y = y + 1;
+            y := y + 1;
         }
 
         write(self.buf, 0, self.bufLen);
     }
 
     fun computeRow(y: Int) {
-        var bits = 0;
-        let Ci = (y.toDouble() * self.fac - 1.0);
-        let bufLocal = buf;
+        var bits := 0;
+        let Ci := (y.toDouble() * self.fac - 1.0);
+        let bufLocal := buf;
 
-        var x = 0;
+        var x := 0;
 
         while x < self.size {
-            var Zr = 0.0;
-            var Zi = 0.0;
-            var Cr = (x.toDouble() * self.fac - 1.5);
+            var Zr := 0.0;
+            var Zi := 0.0;
+            var Cr := (x.toDouble() * self.fac - 1.5);
 
-            var i = 50;
+            var i := 50;
 
-            var ZrN = 0.0;
-            var ZiN = 0.0;
+            var ZrN := 0.0;
+            var ZiN := 0.0;
 
-            Zi = 2.0 * Zr * Zi + Ci;
-            Zr = ZrN - ZiN + Cr;
-            ZiN = Zi * Zi;
-            ZrN = Zr * Zr;
+            Zi := 2.0 * Zr * Zi + Ci;
+            Zr := ZrN - ZiN + Cr;
+            ZiN := Zi * Zi;
+            ZrN := Zr * Zr;
 
-            i = i - 1;
+            i := i - 1;
 
             while !(ZiN + ZrN > 4.0) && i > 0 {
-                Zi = 2.0 * Zr * Zi + Ci;
-                Zr = ZrN - ZiN + Cr;
-                ZiN = Zi * Zi;
-                ZrN = Zr * Zr;
+                Zi := 2.0 * Zr * Zi + Ci;
+                Zr := ZrN - ZiN + Cr;
+                ZiN := Zi * Zi;
+                ZrN := Zr * Zr;
 
-                i = i - 1;
+                i := i - 1;
             }
 
-            bits = bits << 1;
+            bits := bits << 1;
 
-            if i == 0 {
-                bits = bits + 1;
+            if i =0 {
+                bits := bits + 1;
             }
 
-            if x % 8 == 7 {
-                bufLocal[bufLen] = bits.toByte();
-                bufLen = bufLen + 1;
+            if x % 8 =7 {
+                bufLocal[bufLen] := bits.toByte();
+                bufLen := bufLen + 1;
 
-                if bufLen == BUFFER_SIZE {
+                if bufLen =BUFFER_SIZE {
                     write(bufLocal, 0, BUFFER_SIZE);
-                    bufLen = 0;
+                    bufLen := 0;
                 }
 
-                bits = 0;
+                bits := 0;
             }
 
-            x = x + 1;
+            x := x + 1;
         }
 
         if shift != 0 {
-            bits = bits << shift;
-            bufLocal[bufLen] = bits.toByte();
-            bufLen = bufLen + 1;
+            bits := bits << shift;
+            bufLocal[bufLen] := bits.toByte();
+            bufLen := bufLen + 1;
 
-            if bufLen == BUFFER_SIZE {
+            if bufLen =BUFFER_SIZE {
                 write(bufLocal, 0, BUFFER_SIZE);
             }
         }

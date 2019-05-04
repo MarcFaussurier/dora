@@ -1,12 +1,12 @@
 var a: A;
 
 fun main() {
-    assert(a === nil);
+    assert(a ==  nil);
     forceCollect();
-    assert(a === nil);
-    a = A(10);
+    assert(a ==  nil);
+    a := A(10);
     forceCollect();
-    assert(a.val == 10);
+    assert(a.val =10);
 }
 
 fun create() -> A {

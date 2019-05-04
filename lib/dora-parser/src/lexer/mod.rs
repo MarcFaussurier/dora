@@ -279,22 +279,23 @@ impl Lexer {
                     self.read_char();
                     TokenKind::Sep
                 } else {
-                    TokenKind::Colon
+                    if nch == '=' {
+                        self.read_char();
+                        TokenKind::Eq
+                    } else {
+                        self.read_char();
+                        TokenKind::Colon
+                    }
                 }
             }
             '.' => TokenKind::Dot,
             '=' => {
                 if nch == '=' {
                     self.read_char();
-
-                    if nnch == '=' {
-                        self.read_char();
-                        TokenKind::EqEqEq
-                    } else {
-                        TokenKind::EqEq
-                    }
+                    TokenKind::EqEqEq
                 } else {
-                    TokenKind::Eq
+                    self.read_char();
+                    TokenKind::EqEq
                 }
             }
 

@@ -1,7 +1,7 @@
 //= output "hello1"
 
 fun main() {
-  let a = A::<String>(foo(1));
+  let a := A::<String>(foo(1));
   forceCollect();
   print(a.getx());
 }

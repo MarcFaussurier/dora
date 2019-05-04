@@ -8,7 +8,7 @@ class MyThread() : Thread {
 }
 
 fun main() {
-    let thread = MyThread();
+    let thread := MyThread();
     thread.start();
 
     println("one");

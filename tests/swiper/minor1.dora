@@ -1,13 +1,13 @@
 //= vm-args "--gc-parallel-minor --gc-worker=2 --gc-verify"
 
 fun main() {
-    let x = Foo(Foo(nil));
+    let x := Foo(Foo(nil));
     forceMinorCollect();
-    assert(x.next.next === nil);
+    assert(x.next.next ==  nil);
     forceMinorCollect();
-    assert(x.next.next === nil);
+    assert(x.next.next ==  nil);
     forceMinorCollect();
-    assert(x.next.next === nil);
+    assert(x.next.next ==  nil);
 }
 
 class Foo(let next: Foo)

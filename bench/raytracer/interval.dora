@@ -8,12 +8,12 @@ class Interval {
     let threadid: Int;
 
     init(number: Int, width: Int, height: Int, yfrom: Int, yto: Int, total: Int, threadid: Int) {
-        self.number = number;
-        self.width = width;
-        self.height = height;
-        self.yfrom = yfrom;
-        self.yto = yto;
-        self.total = total;
-        self.threadid = threadid;
+        self.number := number;
+        self.width := width;
+        self.height := height;
+        self.yfrom := yfrom;
+        self.yto := yto;
+        self.total := total;
+        self.threadid := threadid;
     }
 }

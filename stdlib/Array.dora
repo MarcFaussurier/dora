@@ -5,27 +5,27 @@ internal class Array<T>(len: Int) {
   internal fun set(idx: Int, val: T);
 
   fun contains(value: T /* : Equals*/) -> Bool {
-    var i = 0;
+    var i := 0;
 
     while i < self.length() {
-      let x = self[i];
-      if /*x.equals(value) ||*/ x === value {
+      let x := self[i];
+      if /*x.equals(value) ||*/ x == value {
         return true;
       }
-      i = i + 1;
+      i := i + 1;
     }
 
     return false;
   }
 
   fun has(value: T) -> Bool {
-    var i = 0;
+    var i := 0;
 
     while i < self.length() {
-      if self[i] === value {
+      if self[i] == value {
         return true;
       }
-      i = i + 1;
+      i := i + 1;
     }
 
     return false;

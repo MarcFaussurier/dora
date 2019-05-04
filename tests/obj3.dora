@@ -1,8 +1,8 @@
 fun main() {
-  let o1 = Foo();
-  let o2 = o1;
+  let o1 := Foo();
+  let o2 := o1;
 
-  assert(o1 === o2);
+  assert(o1 ==  o2);
 }
 
 class Foo

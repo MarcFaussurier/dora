@@ -1,17 +1,17 @@
 class Node(left: Node, right: Node) {
     var i: Int;
     var j: Int;
-    var left: Node = left;
-    var right: Node = right;
+    var left: Node := left;
+    var right: Node := right;
 
-    static fun leaf() -> Node = Node(nil, nil);
+    static fun leaf() -> Node := Node(nil, nil);
 }
 
 var stretchTreeDepth: Int;
 var longLivedTreeDepth: Int;
-const kArraySize: Int = 500000;
-const kMinTreeDepth: Int = 4;
-const kMaxTreeDepth: Int = 16;
+const kArraySize: Int := 500000;
+const kMinTreeDepth: Int := 4;
+const kMaxTreeDepth: Int := 16;
 
 fun treeSize (i: Int) -> Int {
     return (1 << (i + 1)) - 1;
@@ -25,9 +25,9 @@ fun populate(var iDepth: Int, thisNode: Node) {
     if iDepth <= 0 {
         return;
     } else {
-        iDepth = iDepth - 1;
-        thisNode.left = Node::leaf();
-        thisNode.right = Node::leaf();
+        iDepth := iDepth - 1;
+        thisNode.left := Node::leaf();
+        thisNode.right := Node::leaf();
         populate(iDepth, thisNode.left);
         populate(iDepth, thisNode.right);
     }
@@ -42,33 +42,33 @@ fun makeTree(iDepth: Int) -> Node {
 }
 
 fun timeConstruction(depth: Int) {
-    let iNumIters = numIters(depth);
+    let iNumIters := numIters(depth);
     println("Creating " + iNumIters.toString() + " trees of depth " + depth.toString());
-    let start = timestamp();
+    let start := timestamp();
 
-    var i = 0;
+    var i := 0;
 
     while i < iNumIters {
-        let tempTree = Node::leaf();
+        let tempTree := Node::leaf();
         populate(depth, tempTree);
-        i = i + 1;
+        i := i + 1;
     }
 
-    let finish = timestamp();
-    let msecs = (finish - start).toFloat() / 1000.0F / 1000.0F;
+    let finish := timestamp();
+    let msecs := (finish - start).toFloat() / 1000.0F / 1000.0F;
     println("\tTop down construction took " + msecs.toString() + "ms");
 
-    let start = finish;
+    let start := finish;
 
-    var i = 0;
+    var i := 0;
 
     while i < iNumIters {
-        let tempTree = makeTree(depth);
-        i = i + 1;
+        let tempTree := makeTree(depth);
+        i := i + 1;
     }
 
-    let finish = timestamp();
-    let msecs = (finish - start).toFloat() / 1000.0F / 1000.0F;
+    let finish := timestamp();
+    let msecs := (finish - start).toFloat() / 1000.0F / 1000.0F;
     println("\tBottom up construction took " + msecs.toString() + "ms");
 }
 
@@ -78,39 +78,39 @@ fun main() {
         exit(1);
     }
 
-    let depth = argv(0).parseInt();
+    let depth := argv(0).parseInt();
 
-    stretchTreeDepth = depth+1;
-    longLivedTreeDepth = depth;
+    stretchTreeDepth := depth+1;
+    longLivedTreeDepth := depth;
 
     println("Stretching memory with a binary tree of depth " + stretchTreeDepth.toString());
-    let start = timestamp();
+    let start := timestamp();
 
     makeTree(stretchTreeDepth);
 
     println("Creating a long-lived binary tree of depth " + longLivedTreeDepth.toString());
-    let longLivedTree = Node::leaf();
+    let longLivedTree := Node::leaf();
     populate(longLivedTreeDepth, longLivedTree);
 
     println("Creating a long-lived array of " + kArraySize.toString() + " doubles");
-    let array = arrayFill::<Double>(kArraySize, 0.0);
+    let array := arrayFill::<Double>(kArraySize, 0.0);
 
-    var i = 0;
+    var i := 0;
 
     while i < kArraySize / 2 {
-        array[i] = 1.0/i.toDouble();
-        i = i + 1;
+        array[i] := 1.0/i.toDouble();
+        i := i + 1;
     }
 
-    var d = kMinTreeDepth;
+    var d := kMinTreeDepth;
 
     while d <= depth {
         timeConstruction(d);
-        d = d + 2;
+        d := d + 2;
     }
 
-    assert(longLivedTree !== nil && array[1000] == 1.0/1000.0);
-    let finish = timestamp();
-    let elapsed = (finish - start).toFloat() / 1000.0F / 1000.0F;
+    assert(longLivedTree !== nil && array[1000] =1.0/1000.0);
+    let finish := timestamp();
+    let elapsed := (finish - start).toFloat() / 1000.0F / 1000.0F;
     println("Completed in " + elapsed.toString() + "ms.");
 }

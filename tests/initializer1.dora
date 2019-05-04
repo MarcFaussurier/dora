@@ -1,7 +1,7 @@
 //= output "abc!xyz"
 
 class X(let msg: String) {
-  if self.msg == "abc" {
+  if self.msg ="abc" {
     print("abc!");
   } else {
     print(self.msg);

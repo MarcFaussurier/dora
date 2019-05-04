@@ -2,55 +2,55 @@ fun main() {
   f(1, 2, 3, 4, 5, 6, 7, 8);
   g("a", "b", "c", "d", "e", "f", "g", "h");
 
-  let x = Foo1();
+  let x := Foo1();
   x.f(1, 2, 3, 4, 5, 6, 7, 8);
 
-  let x = Foo2(1,2,3,4,5,6,7,8);
-  assert(x.a == 1);
-  assert(x.b == 2);
-  assert(x.c == 3);
-  assert(x.d == 4);
-  assert(x.e == 5);
-  assert(x.f == 6);
-  assert(x.g == 7);
-  assert(x.h == 8);
+  let x := Foo2(1,2,3,4,5,6,7,8);
+  assert(x.a =1);
+  assert(x.b =2);
+  assert(x.c =3);
+  assert(x.d =4);
+  assert(x.e =5);
+  assert(x.f =6);
+  assert(x.g =7);
+  assert(x.h =8);
 }
 
 fun f(a: Int, b: Int, c: Int, d: Int,
      e: Int, f: Int, g: Int, h: Int) {
-   assert(a == 1);
-   assert(b == 2);
-   assert(c == 3);
-   assert(d == 4);
-   assert(e == 5);
-   assert(f == 6);
-   assert(g == 7);
-   assert(h == 8);
+   assert(a =1);
+   assert(b =2);
+   assert(c =3);
+   assert(d =4);
+   assert(e =5);
+   assert(f =6);
+   assert(g =7);
+   assert(h =8);
 }
 
 fun g(a: String, b: String, c: String, d: String,
      e: String, f: String, g: String, h: String) {
-   assert(a == "a");
-   assert(b == "b");
-   assert(c == "c");
-   assert(d == "d");
-   assert(e == "e");
-   assert(f == "f");
-   assert(g == "g");
-   assert(h == "h");
+   assert(a ="a");
+   assert(b ="b");
+   assert(c ="c");
+   assert(d ="d");
+   assert(e ="e");
+   assert(f ="f");
+   assert(g ="g");
+   assert(h ="h");
 }
 
 class Foo1 {
   fun f(a: Int, b: Int, c: Int, d: Int,
        e: Int, f: Int, g: Int, h: Int) {
-    assert(a == 1);
-    assert(b == 2);
-    assert(c == 3);
-    assert(d == 4);
-    assert(e == 5);
-    assert(f == 6);
-    assert(g == 7);
-    assert(h == 8);
+    assert(a =1);
+    assert(b =2);
+    assert(c =3);
+    assert(d =4);
+    assert(e =5);
+    assert(f =6);
+    assert(g =7);
+    assert(h =8);
   }
 }
 

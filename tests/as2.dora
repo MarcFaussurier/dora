@@ -1,9 +1,9 @@
 //= error cast
 
 fun main() {
-  let a = A();
+  let a := A();
 
-  assert(asb(a) === a);
+  assert(asb(a) ==  a);
 }
 
 fun asb(a: A) -> B {

@@ -3,10 +3,10 @@ fun main() {
 }
 
 fun test(a: Float, b: Double, c: Int, d: Long, e: Float, f: Double) {
-    assert(a == 1F);
-    assert(b == 2D);
-    assert(c == 3);
-    assert(d == 4L);
-    assert(e == 5F);
-    assert(f == 6D);
+    assert(a =1F);
+    assert(b =2D);
+    assert(c =3);
+    assert(d =4L);
+    assert(e =5F);
+    assert(f =6D);
 }

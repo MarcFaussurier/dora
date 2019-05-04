@@ -1,6 +1,6 @@
 fun main() {
-    let x = A::default();
-    assert(x === nil);
+    let x := A::default();
+    assert(x ==  nil);
 }
 
 trait DefaultValue {

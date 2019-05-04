@@ -1,9 +1,9 @@
 fun main() {
-  let foo = Foo::<Int>(10);
-  assert(foo.x == 10);
+  let foo := Foo::<Int>(10);
+  assert(foo.x =10);
 
-  let foo = Foo::<String>("hey");
-  assert(foo.x == "hey");
+  let foo := Foo::<String>("hey");
+  assert(foo.x ="hey");
 }
 
 class Foo<T>(let x: T) {

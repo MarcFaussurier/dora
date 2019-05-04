@@ -2,11 +2,11 @@ open abstract class Primitive {
     var surf: Surface;
 
     init() {
-        self.surf = Surface();
+        self.surf := Surface();
     }
 
     fun setColor(r: Double, g: Double, b: Double) {
-        self.surf.color = Vec3(r, g, b);
+        self.surf.color := Vec3(r, g, b);
     }
 
     abstract fun normal(pnt: Vec3) -> Vec3;

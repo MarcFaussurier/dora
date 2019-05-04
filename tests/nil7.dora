@@ -1,7 +1,7 @@
 //= error nil
 
 fun main() {
-    let root: Foo = nil;
+    let root: Foo := nil;
     println(root.value.toString());
 }
 

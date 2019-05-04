@@ -3,9 +3,9 @@
 class X(j: Int) {
   var i: Int;
   {
-    let x = 2;
-    let y = 3;
-    self.i = x * y + j;
+    let x := 2;
+    let y := 3;
+    self.i := x * y + j;
   }
   print(self.i.toString());
 }

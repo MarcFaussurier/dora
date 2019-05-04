@@ -1,7 +1,7 @@
 //= output "Exception: bar\n0: b() -> Exception: 18\n1: a() -> Exception: 14\n2: main(): 4\n"
 
 fun main() {
-  let e = a();
+  let e := a();
 
   // this should test if backtrace in Exception is created the right way
   // by retrieveStackTrace (as Array<Int>)

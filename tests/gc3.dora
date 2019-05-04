@@ -1,6 +1,6 @@
 fun main() {
-  let x = "hello";
-  let y = "world";
+  let x := "hello";
+  let y := "world";
 
   forceCollect();
 }

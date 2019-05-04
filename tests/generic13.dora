@@ -1,7 +1,7 @@
 fun main() {
-    let x = SomeTest::<Int>(1);
-    assert(+x == 1);
-    assert(-x == 1);
+    let x := SomeTest::<Int>(1);
+    assert(+x =1);
+    assert(-x =1);
 }
 
 class SomeTest<T>(let x: T) {

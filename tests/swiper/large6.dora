@@ -1,39 +1,39 @@
 //= vm-args "--gc=swiper --max-heap-size=32M --gc-verify"
 
-const SIZE: Int = 100;
-const STEP: Int = 5;
-const REMOVED: Int = 20;
+const SIZE: Int := 100;
+const STEP: Int := 5;
+const REMOVED: Int := 20;
 
 fun main() {
-    var x = Vec::<Array<Int> >();
-    var i = 0;
+    var x := Vec::<Array<Int> >();
+    var i := 0;
 
     while i < SIZE {
         x.push(Array::<Int>(32 * 1024));
-        i = i + 1;
+        i := i + 1;
     }
 
     forceCollect();
 
-    i = 0;
+    i := 0;
 
     while i < SIZE {
-        x[i] = nil;
-        i = i + STEP;
+        x[i] := nil;
+        i := i + STEP;
     }
 
     forceCollect();
 
-    i = 0;
-    var nils = 0;
+    i := 0;
+    var nils := 0;
 
     while i < SIZE {
-        if x[i] === nil {
-            nils = nils + 1;
+        if x[i] ==  nil {
+            nils := nils + 1;
         }
 
-        i = i + 1;
+        i := i + 1;
     }
 
-    assert(nils == REMOVED);
+    assert(nils =REMOVED);
 }

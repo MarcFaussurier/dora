@@ -4,6 +4,6 @@ fun main() {
 }
 
 fun str() {
-  let x = "abc";
-  let y = "def";
+  let x := "abc";
+  let y := "def";
 }

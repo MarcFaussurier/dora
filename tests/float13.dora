@@ -1,7 +1,7 @@
 fun main() {
-    let x = SomeTest();
-    assert(+x == 1.0F);
-    assert(-x == 2.0F);
+    let x := SomeTest();
+    assert(+x =1.0F);
+    assert(-x =2.0F);
 }
 
 class SomeTest {

@@ -5,7 +5,7 @@ fun main() {
 }
 
 fun foo() {
-  let x = "abc";
-  assert(x.length() == 3);
+  let x := "abc";
+  assert(x.length() =3);
   println(x);
 }

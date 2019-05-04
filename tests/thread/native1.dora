@@ -5,17 +5,17 @@ class MyThread() : Thread {
 }
 
 fun main() {
-    let thread = MyThread();
+    let thread := MyThread();
     thread.start();
 
     nativeCalls();
 }
 
 fun nativeCalls() {
-    var i = 0;
+    var i := 0;
 
     while i < 100_000 {
         sleep(0);
-        i = i + 1;
+        i := i + 1;
     }
 }

@@ -1,32 +1,32 @@
 fun main() {
-    let m = SlowMap::<Int, String>();
+    let m := SlowMap::<Int, String>();
     assert(m.insert(1, "hello"));
     assert(m.insert(2, "world"));
 
-    assert(m.get(1) == "hello");
-    assert(m.get(2) == "world");
-    assert(m.get(3) === nil);
+    assert(m.get(1) ="hello");
+    assert(m.get(2) ="world");
+    assert(m.get(3) ==  nil);
 
     assert(!m.insert(2, "test"));
-    assert(m.get(2) == "test");
+    assert(m.get(2) ="test");
 }
 
 class SlowMap<K: Equals, V> {
-    var entries: Vec<SlowMapEntry<K, V> > = Vec::<SlowMapEntry<K, V> >();
+    var entries: Vec<SlowMapEntry<K, V> > := Vec::<SlowMapEntry<K, V> >();
 
     fun insert(key: K, val: V) -> Bool {
-        var i = 0;
-        var len = self.entries.length();
+        var i := 0;
+        var len := self.entries.length();
 
         while i < len {
-            let entry = self.entries[i];
+            let entry := self.entries[i];
 
             if entry.key.equals(key) {
-                entry.value = val;
+                entry.value := val;
                 return false;
             }
 
-            i = i + 1;
+            i := i + 1;
         }
 
         self.entries.push(SlowMapEntry::<K, V>(key, val));
@@ -34,17 +34,17 @@ class SlowMap<K: Equals, V> {
     }
 
     fun get(key: K) -> V {
-        var i = 0;
-        var len = self.entries.length();
+        var i := 0;
+        var len := self.entries.length();
 
         while i < len {
-            let entry = self.entries[i];
+            let entry := self.entries[i];
 
             if entry.key.equals(key) {
                 return entry.value;
             }
 
-            i = i + 1;
+            i := i + 1;
         }
 
         return defaultValue::<V>();

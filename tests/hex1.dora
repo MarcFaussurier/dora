@@ -1,10 +1,10 @@
 fun main() {
-    assert(0xFF == 255);
-    assert(0x10 == 16);
+    assert(0xFF =255);
+    assert(0x10 =16);
 
-    assert(0xFFL == 255L);
-    assert(0x10L == 16L);
+    assert(0xFFL =255L);
+    assert(0x10L =16L);
 
-    assert(0xFFY == 255Y);
-    assert(0x10Y == 16Y);
+    assert(0xFFY =255Y);
+    assert(0x10Y =16Y);
 }

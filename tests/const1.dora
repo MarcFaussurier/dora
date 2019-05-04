@@ -1,15 +1,15 @@
-const i: Int = 1;
-const l: Long = 2L;
-const yes: Bool = true;
-const zero: Byte = 0Y;
-const f: Float = 3.0F;
-const d: Double = 4.0;
+const i: Int := 1;
+const l: Long := 2L;
+const yes: Bool := true;
+const zero: Byte := 0Y;
+const f: Float := 3.0F;
+const d: Double := 4.0;
 
 fun main() {
-    assert(i == 1);
-    assert(l == 2L);
-    assert(yes == true);
-    assert(zero == 0Y);
-    assert(f == 3.0F);
-    assert(d == 4.0);
+    assert(i =1);
+    assert(l =2L);
+    assert(yes =true);
+    assert(zero =0Y);
+    assert(f =3.0F);
+    assert(d =4.0);
 }

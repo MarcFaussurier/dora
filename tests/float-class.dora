@@ -1,8 +1,8 @@
 fun main() {
-    let f = Foo(1.0);
-    assert(f.x * 2.0 == 2.0);
+    let f := Foo(1.0);
+    assert(f.x * 2.0 =2.0);
 }
 
 class Foo(x: Double) {
-    var x: Double = x;
+    var x: Double := x;
 }

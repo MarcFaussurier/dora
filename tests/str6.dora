@@ -1,7 +1,7 @@
 fun main() {
-    let x = "ABC";
+    let x := "ABC";
 
-    assert(x.getByte(0) == 65Y);
-    assert(x.getByte(1) == 66Y);
-    assert(x.getByte(2) == 67Y);
+    assert(x.getByte(0) =65Y);
+    assert(x.getByte(1) =66Y);
+    assert(x.getByte(2) =67Y);
 }

@@ -11,7 +11,7 @@ fun f(thread: MyThread) {
 }
 
 fun g(thread: MyThread) {
-    thread.executed = true;
+    thread.executed := true;
 }
 
 fun h(thread: MyThread) {
@@ -23,7 +23,7 @@ fun h(thread: MyThread) {
 }
 
 fun main() {
-    let thread = MyThread(false);
+    let thread := MyThread(false);
     thread.start();
 
     h(thread);

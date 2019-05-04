@@ -4,20 +4,20 @@ fun main() {
 
 class Bar(var a: Int) {
   fun exec() {
-    Foo(self.f()).a = self.g();
-    assert(self.a == 100);
+    Foo(self.f()).a := self.g();
+    assert(self.a =100);
   }
 
   fun f() -> Int {
-    assert(self.a == 1);
-    self.a = 10;
+    assert(self.a =1);
+    self.a := 10;
 
     return self.a;
   }
 
   fun g() -> Int {
-    assert(self.a == 10);
-    self.a = 100;
+    assert(self.a =10);
+    self.a := 100;
 
     return self.a;
   }

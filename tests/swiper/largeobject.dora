@@ -1,12 +1,12 @@
 //= vm-args "--gc=swiper --gc-verify"
 
 fun main() {
-    let x = LargeObject();
-    x.val1 = 1L;
-    x.val512 = 512L;
+    let x := LargeObject();
+    x.val1 := 1L;
+    x.val512 := 512L;
     forceMinorCollect();
     forceMinorCollect();
-    assert(x.val1 + x.val512 == 513L);
+    assert(x.val1 + x.val512 =513L);
 }
 
 class LargeObject {

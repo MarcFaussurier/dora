@@ -1,15 +1,15 @@
 fun main() {
-  var maxDepth = 6;
+  var maxDepth := 6;
 
   if argc() > 0 {
-    maxDepth = argv(0).parseInt();
+    maxDepth := argv(0).parseInt();
   }
 
   if 6 > maxDepth {
-    maxDepth = 6;
+    maxDepth := 6;
   }
 
-  let stretchDepth = maxDepth + 1;
+  let stretchDepth := maxDepth + 1;
   println("stretch tree of depth " + stretchDepth.toString() +
           "\t check: " + checkTree(createTree(stretchDepth)).toString());
 
@@ -17,14 +17,14 @@ fun main() {
 }
 
 fun trees(maxDepth: Int) {
-  let longLastingNode = createTree(maxDepth);
-  var depth = 4;
+  let longLastingNode := createTree(maxDepth);
+  var depth := 4;
 
   while depth <= maxDepth {
-    let iterations = 16 << (maxDepth - depth);
+    let iterations := 16 << (maxDepth - depth);
 
     loops(iterations, depth);
-    depth = depth + 2;
+    depth := depth + 2;
   }
 
   println("long lived tree of depth " + maxDepth.toString()
@@ -32,12 +32,12 @@ fun trees(maxDepth: Int) {
 }
 
 fun loops(iterations: Int, depth: Int) {
-  var check = 0;
-  var item = 0;
+  var check := 0;
+  var item := 0;
 
   while item < iterations {
-    check = check + checkTree(createTree(depth));
-    item = item + 1;
+    check := check + checkTree(createTree(depth));
+    item := item + 1;
   }
 
   println(iterations.toString() + "\t trees of depth " +
@@ -45,19 +45,19 @@ fun loops(iterations: Int, depth: Int) {
 }
 
 fun createTree(var depth: Int) -> TreeNode {
-  let node = TreeNode(0, nil, nil);
+  let node := TreeNode(0, nil, nil);
 
   if depth > 0 {
-    depth = depth - 1;
-    node.left = createTree(depth);
-    node.right = createTree(depth);
+    depth := depth - 1;
+    node.left := createTree(depth);
+    node.right := createTree(depth);
   }
 
   return node;
 }
 
 fun checkTree(node: TreeNode) -> Int {
-  if node.left === nil {
+  if node.left ==  nil {
     return 1;
   }
 

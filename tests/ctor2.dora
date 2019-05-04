@@ -1,12 +1,12 @@
 class X(a: Int, b: Int) {
-    var ma : Int = a;
-    var mb : Int = b;
+    var ma : Int := a;
+    var mb : Int := b;
 
 }
 
 fun main() {
-    let x = X(2, 4);
+    let x := X(2, 4);
 
-    assert(x.ma == 2);
-    assert(x.mb == 4);
+    assert(x.ma =2);
+    assert(x.mb =4);
 }

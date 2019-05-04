@@ -1,8 +1,8 @@
 //= error cast
 
 fun main() {
-  let l1 = L1();
-  assert(asl7(l1) === l1);
+  let l1 := L1();
+  assert(asl7(l1) ==  l1);
 }
 
 fun asl7(a: L1) -> L7 {

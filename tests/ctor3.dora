@@ -1,14 +1,14 @@
 fun main() {
-    let x1 = X(1, 3);
-    let x2 = X::empty();
+    let x1 := X(1, 3);
+    let x2 := X::empty();
 
-    assert(x1.ma == x2.mb);
-    assert(x1.mb == x2.ma);
+    assert(x1.ma =x2.mb);
+    assert(x1.mb =x2.ma);
 }
 
 class X(a: Int, b: Int) {
-    var ma: Int = a;
-    var mb: Int = b;
+    var ma: Int := a;
+    var mb: Int := b;
 
-    static fun empty() -> X = X(3, 1);
+    static fun empty() -> X := X(3, 1);
 }

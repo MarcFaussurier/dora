@@ -10,6 +10,6 @@ fun g() { h(); }
 fun h() { i(); }
 
 fun i() {
-  let foo: Foo = nil;
+  let foo: Foo := nil;
   foo.bar();
 }

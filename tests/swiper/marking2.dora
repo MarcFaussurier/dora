@@ -1,12 +1,12 @@
 //= ignore
 
 fun main() {
-    var list: Foo = nil;
-    var i = 1;
+    var list: Foo := nil;
+    var i := 1;
 
     while i <= 10_000_000 {
-        list = Foo(i, list);
-        i = i + 1;
+        list := Foo(i, list);
+        i := i + 1;
     }
 
     forceCollect();

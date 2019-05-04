@@ -1,7 +1,7 @@
 //= output "hello world!\n"
 
 fun main() {
-  assert(f() == 6);
+  assert(f() =6);
 }
 
 fun f() -> Int {

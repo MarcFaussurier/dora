@@ -1,5 +1,5 @@
 fun main() {
-  assert(zero() == 0);
+  assert(zero() =0);
 }
 
 fun zero() -> Int { return 0; }

@@ -4,29 +4,29 @@ trait Hash {
 }
 
 impl Hash for Bool {
-  fun hash() -> Int = self.hash();
+  fun hash() -> Int := self.hash();
 }
 
 impl Hash for Byte {
-  fun hash() -> Int = self.hash();
+  fun hash() -> Int := self.hash();
 }
 
 impl Hash for Int {
-  fun hash() -> Int = self.hash();
+  fun hash() -> Int := self.hash();
 }
 
 impl Hash for Long {
-  fun hash() -> Int = self.hash();
+  fun hash() -> Int := self.hash();
 }
 
 impl Hash for Float {
-  fun hash() -> Int = self.hash();
+  fun hash() -> Int := self.hash();
 }
 
 impl Hash for Double {
-  fun hash() -> Int = self.hash();
+  fun hash() -> Int := self.hash();
 }
 
 impl Hash for String {
-  fun hash() -> Int = self.hash();
+  fun hash() -> Int := self.hash();
 }

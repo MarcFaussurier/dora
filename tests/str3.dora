@@ -4,5 +4,5 @@ fun main() {
 }
 
 fun eq(a: String) -> Bool {
-  return "ab" == a + "b";
+  return "ab" =a + "b";
 }

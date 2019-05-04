@@ -1,17 +1,17 @@
 fun main() {
-  let f = Foo(12);
-  var a1 = f.a1();
-  let a2 = f.a2();
-  assert(a1 == a2);
+  let f := Foo(12);
+  var a1 := f.a1();
+  let a2 := f.a2();
+  assert(a1 =a2);
 
   f.setA(101);
-  a1 = f.a1();
-  assert(101 == a1);
+  a1 := f.a1();
+  assert(101 =a1);
 }
 
 class Foo(var a: Int) {
   fun a1() -> Int { return self.a; }
   fun a2() -> Int { return self.a; }
 
-  fun setA(a: Int) { self.a = a; }
+  fun setA(a: Int) { self.a := a; }
 }

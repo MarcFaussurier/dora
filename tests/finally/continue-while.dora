@@ -2,14 +2,14 @@
 
 fun main() {
     do {
-        var i = 1;
+        var i := 1;
         while true {
             do {
-                if i == 3 {
+                if i =3 {
                     break;
                 }
 
-                i = i + 1;
+                i := i + 1;
                 continue;
 
                 print("nope");

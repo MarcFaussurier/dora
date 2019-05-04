@@ -20,5 +20,5 @@ internal class Double {
   internal fun isNan() -> Bool;
   internal fun sqrt() -> Double;
 
-  fun hash() -> Int = self.asLong().toInt();
+  fun hash() -> Int := self.asLong().toInt();
 }

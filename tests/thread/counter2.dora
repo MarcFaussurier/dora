@@ -10,7 +10,7 @@ class MyThread(var executed: Bool) : Thread {
     }
 
     fun g() {
-        self.executed = true;
+        self.executed := true;
     }
 
     fun h() {
@@ -23,7 +23,7 @@ class MyThread(var executed: Bool) : Thread {
 }
 
 fun main() {
-    let thread = MyThread(false);
+    let thread := MyThread(false);
     thread.start();
 
     thread.h();

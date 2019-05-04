@@ -5,113 +5,113 @@ open abstract class Node {
     var right: Node;
 
     static fun splay(var tree: Node, node: Node) -> Node {
-        if tree === nil {
+        if tree ==  nil {
             return tree;
         }
 
-        node.left = nil;
-        node.right = nil;
+        node.left := nil;
+        node.right := nil;
 
-        var l: Node = node;
-        var r: Node = node;
+        var l: Node := node;
+        var r: Node := node;
 
         loop {
             if node.value <= tree.value {
-                if tree.left === nil {
+                if tree.left ==  nil {
                     break;
                 }
 
                 if node.value <= tree.left.value {
                     // rotate right
-                    let y = tree.left;
-                    tree.left = y.right;
-                    y.right = tree;
-                    tree = y;
-                    if tree.left === nil {
+                    let y := tree.left;
+                    tree.left := y.right;
+                    y.right := tree;
+                    tree := y;
+                    if tree.left ==  nil {
                         break;
                     }
                 }
 
                 // link right
-                r.left = tree;
-                r = tree;
-                tree = tree.left;
+                r.left := tree;
+                r := tree;
+                tree := tree.left;
 
             } else if node.value > tree.value {
-                if tree.right === nil {
+                if tree.right ==  nil {
                     break;
                 }
 
                 if node.value > tree.right.value {
                     // rotate left
-                    let y = tree.right;
-                    tree.right = y.left;
-                    y.left = tree;
-                    tree = y;
-                    if tree.right === nil {
+                    let y := tree.right;
+                    tree.right := y.left;
+                    y.left := tree;
+                    tree := y;
+                    if tree.right ==  nil {
                         break;
                     }
                 }
 
                 // link left
-                l.right = tree;
-                l = tree;
-                tree = tree.right;
+                l.right := tree;
+                l := tree;
+                tree := tree.right;
 
             } else {
                 break;
             }
         }
 
-        l.right = tree.left;
-        r.left = tree.right;
-        tree.left = node.right;
-        tree.right = node.left;
+        l.right := tree.left;
+        r.left := tree.right;
+        tree.left := node.right;
+        tree.right := node.left;
         return tree;
     }
 
     static fun insert(var tree: Node, node: Node) -> Node {
-        if tree === nil {
+        if tree ==  nil {
             return node;
         }
 
-        tree = Node::splay(tree, node);
+        tree := Node::splay(tree, node);
 
         if node.value <= tree.value {
-            node.left = tree.left;
-            node.right = tree;
-            tree.left = nil;
+            node.left := tree.left;
+            node.right := tree;
+            tree.left := nil;
         } else { // if (node.value > true.value)
-            node.right = tree.right;
-            node.left = tree;
-            tree.right = nil;
+            node.right := tree.right;
+            node.left := tree;
+            tree.right := nil;
         }
 
         return node;
     }
 
     static fun trunc(date: Int, tree: Node, depth: Int) {
-        if tree === nil {
+        if tree ==  nil {
             return;
         }
 
         if tree.left !== nil {
-            if depth == 0 {
+            if depth =0 {
                 /*if tree.left !== nil {
                     println("truncate left");
                 }*/
-                tree.left = nil;
+                tree.left := nil;
             } else {
                 Node::trunc(date, tree.left, depth-1);
             }
         }
 
         if tree.right !== nil {
-            if depth == 0 {
+            if depth =0 {
                 /*if tree.right !== nil {
                     println("truncate right");
                 }*/
-                tree.right = nil;
+                tree.right := nil;
             } else {
                 Node::trunc(date, tree.right, depth-1);
             }
@@ -149,7 +149,7 @@ open abstract class Node {
     }
 
     static fun countNodes(node: Node) -> Int {
-        if node === nil {
+        if node ==  nil {
             return 0;
         }
 
@@ -158,16 +158,16 @@ open abstract class Node {
 }
 
 class NodeA: Node {}
-class NodeB: Node { let x1: Long = 0L; }
-class NodeC: Node { let x1: Long = 0L; let x2: Long = 0L; }
-class NodeD: Node { let x1: Double = 0.0; let x2: Double = 0.0; let x3: Double = 0.0; }
+class NodeB: Node { let x1: Long := 0L; }
+class NodeC: Node { let x1: Long := 0L; let x2: Long := 0L; }
+class NodeD: Node { let x1: Double := 0.0; let x2: Double := 0.0; let x3: Double := 0.0; }
 
 class Node40: Node {}
-class Node48: Node { let x1: Long = 0L; }
-class Node56: Node { let x1: Long = 0L; let x2: Long = 0L; }
-class Node64: Node { let x1: Long = 0L; let x2: Long = 0L; let x3: Long = 0L; }
-class Node72: Node { let x1: Long = 0L; let x2: Long = 0L; let x3: Long = 0L; let x4: Long = 0L; }
-class Node80: Node { let x1: Long = 0L; let x2: Long = 0L; let x3: Long = 0L; let x4: Long = 0L; let x5: Long = 0L; }
+class Node48: Node { let x1: Long := 0L; }
+class Node56: Node { let x1: Long := 0L; let x2: Long := 0L; }
+class Node64: Node { let x1: Long := 0L; let x2: Long := 0L; let x3: Long := 0L; }
+class Node72: Node { let x1: Long := 0L; let x2: Long := 0L; let x3: Long := 0L; let x4: Long := 0L; }
+class Node80: Node { let x1: Long := 0L; let x2: Long := 0L; let x3: Long := 0L; let x4: Long := 0L; let x5: Long := 0L; }
 
 fun main() {
     if argc() < 4 {
@@ -175,52 +175,52 @@ fun main() {
         exit(1);
     }
 
-    let rnd = Random(argv(0).parseLong());
-    let max_size = argv(1).parseInt();
-    var date = 0;
+    let rnd := Random(argv(0).parseLong());
+    let max_size := argv(1).parseInt();
+    var date := 0;
 
-    var tree: Node = NodeA();
-    tree.birthday = date;
-    date = date + 1;
-    tree.value = rnd.nextIntWithBound(max_size);
+    var tree: Node := NodeA();
+    tree.birthday := date;
+    date := date + 1;
+    tree.value := rnd.nextIntWithBound(max_size);
 
-    var j = 2;
+    var j := 2;
 
     while j + 2 <= argc() {
-        let n = argv(j).parseInt();
-        let depth = argv(j+1).parseInt();
+        let n := argv(j).parseInt();
+        let depth := argv(j+1).parseInt();
 
-        // println("n = " + n.toString());
-        // println("depth = " + depth.toString());
+        // println("n := " + n.toString());
+        // println("depth := " + depth.toString());
 
-        var i = 0;
+        var i := 0;
         while i < n {
-            let value = rnd.nextIntWithBound(4);
-            var node: Node = nil;
+            let value := rnd.nextIntWithBound(4);
+            var node: Node := nil;
 
-            if value == 0 {
-                node = NodeA();
-            } else if value == 1 {
-                node = NodeB();
-            } else if value == 2 {
-                node = NodeC();
+            if value =0 {
+                node := NodeA();
+            } else if value =1 {
+                node := NodeB();
+            } else if value =2 {
+                node := NodeC();
             } else {
-                assert(value == 3);
-                node = NodeD();
+                assert(value =3);
+                node := NodeD();
             }
 
-            node.birthday = date;
-            date = date + 1;
-            node.value = rnd.nextIntWithBound(max_size);
+            node.birthday := date;
+            date := date + 1;
+            node.value := rnd.nextIntWithBound(max_size);
 
-            tree = Node::insert(tree, node);
+            tree := Node::insert(tree, node);
             Node::trunc(date, tree, depth);
 
             // println("nodes in tree: " + Node::countNodes(tree).toString());
 
-            i = i + 1;
+            i := i + 1;
         }
 
-        j = j + 2;
+        j := j + 2;
     }
 }

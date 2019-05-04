@@ -20,5 +20,5 @@ internal class Float {
   internal fun isNan() -> Bool;
   internal fun sqrt() -> Float;
 
-  fun hash() -> Int = self.asInt();
+  fun hash() -> Int := self.asInt();
 }

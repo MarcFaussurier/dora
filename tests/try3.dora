@@ -1,7 +1,7 @@
 //= error unexpected
 
 fun main() {
-    let val = try! foo();
+    let val := try! foo();
     print(val.toString());
 }
 

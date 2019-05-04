@@ -1,7 +1,7 @@
 //= error nil
 
 fun main() {
-    let a: A = nil;
+    let a: A := nil;
     a.foo();
 }
 

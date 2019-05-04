@@ -1,13 +1,13 @@
 var x: Double;
 
 fun main() {
-    assert(getx() == 0.0);
+    assert(getx() =0.0);
 
-    x = 4.0;
-    assert(getx() == 8.0);
+    x := 4.0;
+    assert(getx() =8.0);
 
-    x = 5.0;
-    assert(getx() == 10.0);
+    x := 5.0;
+    assert(getx() =10.0);
 }
 
 fun getx() -> Double {

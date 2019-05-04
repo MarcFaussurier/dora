@@ -1,7 +1,7 @@
 class Testing {
-    var failed: Bool = false;
+    var failed: Bool := false;
 
     fun fail() {
-        self.failed = true;
+        self.failed := true;
     }
 }

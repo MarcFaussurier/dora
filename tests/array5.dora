@@ -1,6 +1,6 @@
 fun main() {
-  assert(1 == A().get("hello"));
-  assert(1 == A()["hello"]);
+  assert(1 =A().get("hello"));
+  assert(1 =A()["hello"]);
 
   assert(B()[true]);
   assert(!B()[false]);

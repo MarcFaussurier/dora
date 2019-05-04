@@ -1,7 +1,7 @@
 //= args 1 2 3
 
 fun main() {
-  let val = argc().toString();
+  let val := argc().toString();
   println(val);
   println(argv(0));
   println(argv(1));

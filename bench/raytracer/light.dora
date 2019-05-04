@@ -5,7 +5,7 @@ class Light {
     init() {}
 
     init(x: Double, y: Double, z: Double, brightness: Double) {
-        self.pos = Vec3(x, y, z);
-        self.brightness = brightness;
+        self.pos := Vec3(x, y, z);
+        self.brightness := brightness;
     }
 }

@@ -1,5 +1,5 @@
 fun main() {
-  assert(true.toString() == "true");
-  assert(false.toString() == "false");
-  assert(0.toString() == "0");
+  assert(true.toString() ="true");
+  assert(false.toString() ="false");
+  assert(0.toString() ="0");
 }

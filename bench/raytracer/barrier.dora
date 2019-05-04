@@ -1,6 +1,6 @@
 class Barrier {
     init(n: number) {
-        self.numThreads = n;
+        self.numThreads := n;
     }
 
     abstract fun doBarrier(myid: Int);

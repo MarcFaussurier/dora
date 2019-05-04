@@ -5,6 +5,6 @@ class Foo {
 }
 
 fun main() {
-  let foo: Foo = nil;
+  let foo: Foo := nil;
   foo.bar();
 }

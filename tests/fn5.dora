@@ -1,6 +1,6 @@
 fun main() {
-  let result = 1 + myzero();
-  assert(result == 1);
+  let result := 1 + myzero();
+  assert(result =1);
 }
 
 fun myzero() -> Int {

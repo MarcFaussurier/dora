@@ -1,89 +1,89 @@
 fun main() {
-  var n = 7;
-  if argc() > 0 { n = argv(0).parseInt(); }
-  println("Pfannkuchen ("+n.toString()+") = " + fannkuch(n).toString());
+  var n := 7;
+  if argc() > 0 { n := argv(0).parseInt(); }
+  println("Pfannkuchen ("+n.toString()+") := " + fannkuch(n).toString());
 }
 
 fun fannkuch(n: Int) -> Int {
-  let perm = arrayFill::<Int>(n, 0);
-  let perm1 = arrayFill::<Int>(n, 0);
-  let count = arrayFill::<Int>(n, 0);
-  var maxFlipsCount = 0;
-  var permCount = 0;
-  var checksum = 0;
+  let perm := arrayFill::<Int>(n, 0);
+  let perm1 := arrayFill::<Int>(n, 0);
+  let count := arrayFill::<Int>(n, 0);
+  var maxFlipsCount := 0;
+  var permCount := 0;
+  var checksum := 0;
 
-  var i = 0;
+  var i := 0;
   while i < n {
-    perm1[i] = i;
-    i = i + 1;
+    perm1[i] := i;
+    i := i + 1;
   }
 
-  var r = n;
+  var r := n;
 
   while true {
     while r != 1 {
-      count[r-1] = r;
-      r = r - 1;
+      count[r-1] := r;
+      r := r - 1;
     }
 
-    var i = 0;
+    var i := 0;
     while i < n {
-      perm[i] = perm1[i];
-      i = i + 1;
+      perm[i] := perm1[i];
+      i := i + 1;
     }
 
-    var flipsCount = 0;
-    var k = perm[0];
+    var flipsCount := 0;
+    var k := perm[0];
 
     while k != 0 {
-      let k2 = (k+1) / 2;
+      let k2 := (k+1) / 2;
 
-      var i = 0;
+      var i := 0;
       while i < k2 {
-        let temp = perm[i];
-        perm[i] = perm[k-i];
-        perm[k-i] = temp;
+        let temp := perm[i];
+        perm[i] := perm[k-i];
+        perm[k-i] := temp;
 
-        i = i + 1;
+        i := i + 1;
       }
 
-      flipsCount = flipsCount + 1;
-      k = perm[0];
+      flipsCount := flipsCount + 1;
+      k := perm[0];
     }
 
-    maxFlipsCount = max(maxFlipsCount, flipsCount);
+    maxFlipsCount := max(maxFlipsCount, flipsCount);
 
-    if permCount % 2 == 0 {
-      checksum = checksum + flipsCount;
+    if permCount % 2 =0 {
+      checksum := checksum + flipsCount;
     } else {
-      checksum = checksum - flipsCount;
+      checksum := checksum - flipsCount;
     }
 
     while true {
-      if r == n {
+      if r =n {
         println(checksum.toString());
         return maxFlipsCount;
       }
 
-      let perm0 = perm1[0];
-      var i = 0;
+      let perm0 := perm1[0];
+      var i := 0;
 
       while i < r {
-        let j = i + 1;
-        perm1[i] = perm1[j];
-        i = j;
+        let j := i + 1;
+        perm1[i] := perm1[j];
+        i := j;
       }
 
-      perm1[r] = perm0;
+      perm1[r] := perm0;
 
-      count[r] = count[r] - 1;
+      count[r] := count[r] - 1;
 
       if count[r] > 0 { break; }
 
-      r = r + 1;
+      r := r + 1;
     }
 
-    permCount = permCount + 1;
+    permCount := permCount + 1;
   }
 
   return -1;

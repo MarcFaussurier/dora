@@ -1,6 +1,6 @@
 fun main() {
-  let a = 1;
-  let b = 2;
+  let a := 1;
+  let b := 2;
 
   // a + h() --> 4
   // b * i() --> 10
@@ -8,7 +8,7 @@ fun main() {
   // j() --> 7
   // f(36, 7) --> 288
 
-  assert(f(g(a + h(), b * i()), j()) == 288);
+  assert(f(g(a + h(), b * i()), j()) =288);
 }
 
 fun h() -> Int { return 3; }

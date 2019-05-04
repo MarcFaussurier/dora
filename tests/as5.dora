@@ -4,7 +4,7 @@ fun main() {
 }
 
 fun test(a: A) -> Bool {
-    let a = a as B;
+    let a := a as B;
     return a.x != 0;
 }
 

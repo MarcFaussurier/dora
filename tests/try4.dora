@@ -1,7 +1,7 @@
 //= output "1"
 
 fun main() {
-    let val = try foo() else 0;
+    let val := try foo() else 0;
     print(val.toString());
 }
 

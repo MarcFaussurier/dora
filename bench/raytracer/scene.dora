@@ -4,8 +4,8 @@ class Scene {
     var view: View;
 
     init() {
-        self.lights = Vec::<Light>();
-        self.objects = Vec::<Primitive>();
+        self.lights := Vec::<Light>();
+        self.objects := Vec::<Primitive>();
     }
 
     fun addLight(l: Light) {
@@ -17,7 +17,7 @@ class Scene {
     }
 
     fun setView(view: View) {
-        self.view = view;
+        self.view := view;
     }
 
     fun getView() -> View {
@@ -41,6 +41,6 @@ class Scene {
     }
 
     fun setObject(object: Primitive, pos: Int) {
-        self.objects[pos] = object;
+        self.objects[pos] := object;
     }
 }

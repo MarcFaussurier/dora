@@ -1,6 +1,6 @@
 //= error assert
 
 fun main() {
-  let a = false;
+  let a := false;
   assert(a);
 }

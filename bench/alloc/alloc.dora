@@ -1,12 +1,12 @@
 fun main() {
-    let threads = argv(0).parseInt();
+    let threads := argv(0).parseInt();
 
-    var i = 0;
+    var i := 0;
 
     while i < threads {
-        let thread = MyThread();
+        let thread := MyThread();
         thread.start();
-        i = i + 1;
+        i := i + 1;
     }
 }
 
@@ -17,11 +17,11 @@ class MyThread() : Thread {
 }
 
 fun allocator() {
-    var i = 0;
+    var i := 0;
 
     while i < 20_000_000 {
         Foo();
-        i = i + 1;
+        i := i + 1;
     }
 }
 

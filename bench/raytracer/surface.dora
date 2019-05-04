@@ -7,12 +7,12 @@ class Surface {
     var ior: Double;
 
     init() {
-        self.color = Vec3(1.0, 0.0, 0.0);
-        self.kd = 1.0;
-        self.ks = 0.0;
-        self.shine = 0.0;
-        self.kt = 0.0;
-        self.ior = 1.0;
+        self.color := Vec3(1.0, 0.0, 0.0);
+        self.kd := 1.0;
+        self.ks := 0.0;
+        self.shine := 0.0;
+        self.kt := 0.0;
+        self.ior := 1.0;
     }
 
     fun toString() {

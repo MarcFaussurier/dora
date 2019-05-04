@@ -20,5 +20,5 @@ impl Foo for X {
 }
 
 fun main() {
-    assert(2 == A::<X>(X()).bar());
+    assert(2 =A::<X>(X()).bar());
 }

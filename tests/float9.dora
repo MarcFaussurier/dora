@@ -1,9 +1,9 @@
 //= output "1\n1\n"
 
 fun main() {
-    let x = 1F;
+    let x := 1F;
     println(x.toString());
 
-    let x = 1D;
+    let x := 1D;
     println(x.toString());
 }

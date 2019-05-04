@@ -5,7 +5,7 @@ fun unreachable() {
   fatalError("unreachable code");
 }
 
-fun unimplemented() = fatalError("not yet implemented");
+fun unimplemented() := fatalError("not yet implemented");
 
 internal fun print(text: String);
 internal fun println(text: String);
@@ -25,110 +25,110 @@ internal fun timestamp() -> Long;
 
 class Object
 
-fun arrayEmpty<T>() -> Array<T> = Array::<T>(0);
+fun arrayEmpty<T>() -> Array<T> := Array::<T>(0);
 
 fun arrayFill<T>(len: Int, value: T) -> Array<T> {
-  let array = Array::<T>(len);
-  var i = 0;
+  let array := Array::<T>(len);
+  var i := 0;
 
   while i < len {
-    array[i] = value;
-      i = i + 1;
+    array[i] := value;
+      i := i + 1;
   }
   return array;
 }
 
 fun arraycopy<T>(src: Array<T>, srcPos: Int, dest: Array<T>, destPos: Int, len: Int) {
-  var i = 0;
+  var i := 0;
 
   while i < len {
-    dest[destPos+i] = src[srcPos+i];
-    i = i + 1;
+    dest[destPos+i] := src[srcPos+i];
+    i := i + 1;
   }
 }
 
 fun bubbleSort<T: Comparable>(array: Array<T>) {
-  let len = array.length();
-  var swapped = true;
+  let len := array.length();
+  var swapped := true;
 
   while swapped {
-    swapped = false;
+    swapped := false;
 
-    var i = 1;
+    var i := 1;
 
     while i < len {
       if array[i-1].compareTo(array[i]) > 0 {
-        let temp = array[i-1];
-        array[i-1] = array[i];
-        array[i] = temp;
+        let temp := array[i-1];
+        array[i-1] := array[i];
+        array[i] := temp;
 
-        swapped = true;
+        swapped := true;
       }
 
-      i = i + 1;
+      i := i + 1;
     }
   }
 }
 
 fun isValidUtf8(data: Array<Byte>) -> Bool {
-  var i = 0;
+  var i := 0;
 
   while i < data.length() {
-    let by = data[i].toInt();
-    var codePoint = 0;
-    var nextBytes = 0;
-    var min = 0;
-    var max = 0;
+    let by := data[i].toInt();
+    var codePoint := 0;
+    var nextBytes := 0;
+    var min := 0;
+    var max := 0;
 
-    if by & 0x80 == 0 {
-      nextBytes = 0;
-      i = i + 1;
+    if by & 0x80 = 0 {
+      nextBytes := 0;
+      i := i + 1;
       continue;
 
-    } else if by & 0xC0 == 0x80 {
+    } else if by & 0xC0 = 0x80 {
       return false;
 
-    } else if by & 0xE0 == 0xC0 {
-      codePoint = by & 0x1F;
-      nextBytes = 1;
-      min = 0x80;
-      max = 0x7FF;
+    } else if by & 0xE0 = 0xC0 {
+      codePoint := by & 0x1F;
+      nextBytes := 1;
+      min := 0x80;
+      max := 0x7FF;
 
-    } else if by & 0xF0 == 0xE0 {
-      codePoint = by & 0xF;
-      nextBytes = 2;
-      min = 0x800;
-      max = 0xFFFF;
+    } else if by & 0xF0 = 0xE0 {
+      codePoint := by & 0xF;
+      nextBytes := 2;
+      min := 0x800;
+      max := 0xFFFF;
 
-    } else if by & 0xF8 == 0xF0 {
-      codePoint = by & 0x7;
-      nextBytes = 3;
-      min = 0x10000;
-      max = 0x10FFFF;
+    } else if by & 0xF8 = 0xF0 {
+      codePoint := by & 0x7;
+      nextBytes := 3;
+      min := 0x10000;
+      max := 0x10FFFF;
     }
 
     while nextBytes > 0 {
-      nextBytes = nextBytes - 1;
-      i = i + 1;
+      nextBytes := nextBytes - 1;
+      i := i + 1;
 
       if i >= data.length() {
         return false;
       }
 
-      let by = data[i].toInt();
+      let by := data[i].toInt();
 
       if by & 0xC0 != 0x80 {
         return false;
       }
 
-      codePoint = (codePoint << 6) | (by & 0x3F);
+      codePoint := (codePoint << 6) | (by & 0x3F);
     }
 
     if codePoint < min || codePoint > max {
       return false;
     }
 
-    i = i + 1;
+    i := i + 1;
   }
 
   return true;
@@ -147,14 +147,14 @@ internal fun native_free(address: Long);
 internal fun set_uint8(address: Long, val: Byte);
 
 fun native_string(val: String) -> Long {
-  var i = 0;
-  let len = val.length();
+  var i := 0;
+  let len := val.length();
 
-  let ptr = native_malloc(len.toLong()+1L);
+  let ptr := native_malloc(len.toLong()+1L);
 
   while i < len {
     set_uint8(ptr+i.toLong(), val.getByte(i));
-    i = i + 1;
+    i := i + 1;
   }
 
   set_uint8(ptr+len.toLong(), 0Y);
@@ -162,9 +162,9 @@ fun native_string(val: String) -> Long {
   return ptr;
 }
 
-fun getpid() -> Int = call0(loadFunction("getpid")).toInt();
+fun getpid() -> Int := call0(loadFunction("getpid")).toInt();
 
-fun getppid() -> Int = call0(loadFunction("getppid")).toInt();
+fun getppid() -> Int := call0(loadFunction("getppid")).toInt();
 
 internal fun sleep(seconds: Int);
 
@@ -174,7 +174,7 @@ class IntRange(let lower: Int, let upper: Int) {
   }
 }
 
-fun range(lower: Int, upper: Int) -> IntRange = IntRange(lower, upper);
+fun range(lower: Int, upper: Int) -> IntRange := IntRange(lower, upper);
 
 trait Iterator {
   fun hasNext() -> Bool;
@@ -182,7 +182,7 @@ trait Iterator {
 }
 
 class IntRangeIter(let range: IntRange) {
-  var value: Int = range.lower;
+  var value: Int := range.lower;
 }
 
 impl Iterator for IntRangeIter {
@@ -191,8 +191,8 @@ impl Iterator for IntRangeIter {
   }
 
   fun next() -> Int {
-    let cur = self.value;
-    self.value = cur + 1;
+    let cur := self.value;
+    self.value := cur + 1;
     return cur;
   }
 }

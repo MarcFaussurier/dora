@@ -213,8 +213,8 @@ impl TokenKind {
             TokenKind::Or => "||",
             TokenKind::Internal => "internal",
 
-            TokenKind::Eq => "=",
-            TokenKind::EqEq => "==",
+            TokenKind::Eq => ":=",
+            TokenKind::EqEq => "=",
             TokenKind::Ne => "!=",
             TokenKind::Lt => "<",
             TokenKind::Le => "<=",
@@ -225,7 +225,7 @@ impl TokenKind {
             TokenKind::GtGtGt => ">>>",
             TokenKind::LtLt => "<<",
 
-            TokenKind::EqEqEq => "===",
+            TokenKind::EqEqEq => "==",
             TokenKind::NeEqEq => "!==",
             TokenKind::Is => "is",
             TokenKind::As => "as",

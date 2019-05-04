@@ -3,14 +3,14 @@ class Ray {
     var D: Vec3;
 
     init(pnt: Vec3, dir: Vec3) {
-        self.P = Vec3(pnt.x, pnt.y, pnt.z);
-        self.D = Vec3(dir.x, dir.y, dir.z);
+        self.P := Vec3(pnt.x, pnt.y, pnt.z);
+        self.D := Vec3(dir.x, dir.y, dir.z);
         self.D.normalize();
     }
 
     init() {
-        self.P = Vec3();
-        self.D = Vec3();
+        self.P := Vec3();
+        self.D := Vec3();
     }
 
     fun point(t: Double) {

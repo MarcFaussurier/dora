@@ -1,5 +1,5 @@
 fun main() {
-  assert(f() == 1);
+  assert(f() =1);
 }
 
 fun f() -> Int {

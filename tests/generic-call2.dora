@@ -19,5 +19,5 @@ impl Foo for X {
 }
 
 fun main() {
-    assert(4 == foo::<X>(X()));
+    assert(4 =foo::<X>(X()));
 }

@@ -7,19 +7,19 @@ trait Sortable {
 }
 
 impl Sortable for Bool {
-  fun sortsAs(other: Bool) -> Int = self.compareTo(other);
+  fun sortsAs(other: Bool) -> Int := self.compareTo(other);
 }
 
 impl Sortable for Byte {
-  fun sortsAs(other: Byte) -> Int = self.compareTo(other);
+  fun sortsAs(other: Byte) -> Int := self.compareTo(other);
 }
 
 impl Sortable for Int {
-  fun sortsAs(other: Int) -> Int = self.compareTo(other);
+  fun sortsAs(other: Int) -> Int := self.compareTo(other);
 }
 
 impl Sortable for Long {
-  fun sortsAs(other: Long) -> Int = self.compareTo(other);
+  fun sortsAs(other: Long) -> Int := self.compareTo(other);
 }
 
 // requires intrinsics
@@ -34,5 +34,5 @@ impl Sortable for Double {
 */
 
 impl Sortable for String {
-  fun sortsAs(other: String) -> Int = self.compareTo(other);
+  fun sortsAs(other: String) -> Int := self.compareTo(other);
 }

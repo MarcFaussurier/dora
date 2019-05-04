@@ -1,7 +1,7 @@
 //= vm-args "--gc=swiper --gc-verify"
 
 fun main() {
-  let x = "perm";
+  let x := "perm";
   forceMinorCollect();
-  assert(x.length() == 4);
+  assert(x.length() =4);
 }
