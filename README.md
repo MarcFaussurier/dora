@@ -1,3 +1,26 @@
+New syntax: 
+
+Assignement use the := token instead of =
+```
+class StringBuf(var buf: Array<Byte>, var length: Int) {
+  static fun empty() -> StringBuf := StringBuf(Array::<Byte>(0), 0); 
+ ... 
+ ```
+Also the comparaison is = instead of == and the strict one is == instead of === 
+  
+ Fibonacci sample: 
+ ```
+ fun fibo(n: Int) -> Int {
+    if n =  0 {
+        return n;
+    } else if n <= 2 {
+        return 1;
+    } else {
+        return fibo(n - 1) + fibo(n - 2);
+    }
+}
+```
+
 # Dora
 
 [![Join the chat at https://gitter.im/dora-lang/dora](https://badges.gitter.im/dora-lang/Lobby.svg)](https://gitter.im/dora-lang/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/dinfuehr/dora.svg?branch=master)](https://travis-ci.org/dinfuehr/dora)
